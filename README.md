@@ -1,140 +1,75 @@
-Chapter 1: Business Overview
+## Housing prices Prediction In King County
+## Problem Statement
+The Real estate agency face difficulties, when accessing the key factors tha influence the housing prices in King County.Then aim of this project is try to find the most important features that influence ,the housing prices . We also aim to provide the most to develop a more comprehensive understanding of our variables so us to predict accurately the housing prices in king count
 
+## Project Overview
+The project focuses on multiple linear regression model for prediction of housing prices for our Real Estate agency
 
-1.1   Introduction
+## Business understanding
+Trying to predict the housing prices for our real estate agency is very crucial task.Accurately Prediction we help our Real Estate Agency to draw insights on the features that effect the price and try to implemenent to see if they can increase the market value of the houses.
 
-The real estate market is a complex and dynamic environment where accurately pricing houses is of paramount importance. In this ever-changing landscape, homeowners, buyers, and real estate agencies are often faced with the challenge of determining the fair market value of a property. The consequences of inaccurate pricing can be significant, ranging from houses languishing on the market for extended periods to missed opportunities for maximizing profit.
+## Components
+. ##Jupyter notebook : The [Jupyter notebook] The notebook shows the approach and ways in which we did our analysis.ie data cleaning,exploratory data analysis and modeling
 
-The quest for a precise and data-driven solution to this challenge has led us to explore the application of a multilinear regression model. By leveraging the power of data analysis and predictive modeling, we aim to provide a practical tool that can revolutionize the way houses are priced, making the process more transparent, efficient, and informed.
+.##Presentation .The [Presentions]. THis briefly explains the slides ,to explain to our findings to the real estate agency.
 
+## Data
+THe dataset was from "kc_house_data.csv"
 
-1.2   Challenges
+## Libraries/Packages Used
+Python Matplotlib Seaborn Pandas Statsmodel Scikit-learn
 
-The challenges in the real estate market are multifaceted. Real estate agencies often grapple with two primary issues: overpricing and the lack of a robust decision framework. Overpricing can lead to properties remaining unsold for prolonged periods, incurring additional costs, and diminishing potential profits. On the other hand, prospective buyers face difficulties in determining which properties align with their budgets and desired features.
+To get Started
+1 Clone the Repository 2 Data can be found in the file kc_house_data
 
+## Data Wrangling
+We worked on missing values, feature engineering, dealing with duplicates,.This helps a clean data for accurately prediction for our housing prices.
 
-1.3    Problem Statement
+## EXploratorty Data Analysis
+Here we will explore the different features of the dataset to gain a better understanding of the data. We will use data vizualization to uncover trends and patterns. We will use Feature Engineering to create new features from existing ones and perform One-Hot Encoding on categorical variables that we will require for analysis.
 
-The core problem that our project addresses is the accurate pricing of houses listed in the market. Overpricing can be detrimental to both sellers and buyers. The absence of a reliable decision framework means that clients with varying budgets and preferences lack guidance in their property search. As such, there is a clear need for a data-driven solution that can provide precise house price predictions and, in doing so, mitigate the challenges faced by stakeholders in the real estate market.
+Most houses are priced around a half million to a million dollars, while the most expensive houses imply the order of two million dollars and more
 
-1.3.1        Objectives
+## Overview of house features
+Categorical features of the house include id, date, bedrooms, floors, waterfront, view, grade, year_built, yr_renovetd, zipcode, lat, long. Numerical variables include price, sqft_living, sqft_lot, sqft_above, sqft_basement, sqft_basement, sqft_living_above, sqft_lot_below. it is can be noticed that as bedrooms increase, so does the house's selling price more floors, preferably up to 2.5 have a higher price.
 
-a). Develop a multilinear regression model with the highest possible accuracy to predict and determine house prices based on their features.
+## Modeling
+Regression Modeling
 
-b). Identify Key Factors Influencing House Prices in King County, California, to provide valuable insights for precise pricing strategies.
+Model
 
-c). Analyze Model Performance using metrics such as mean squared error, R-squared values, and residual analysis to gauge the model's effectiveness.
+R-Squared Value
 
+RMSE
 
-d). Provide Actionable Recommendations to the Real Estate Agency for improving profitability and market presence, leveraging insights from the model.
+Observation
 
+Baseline Model
 
+46.01%
 
-Chapter 2: Data Understanding
+$124,066
 
-2.1 Numerical Variables
+This model has a weak predictive capability.
 
-To better understand the dataset we identified the numeric variables .We intend to drop columns that have low correlation with the dependent variable .They include latitude and longitude.
+Multiple Linear regression
 
-Date – Date house was sold
+90.4%
 
-Price – Sale price(prediction target)
+$71,295
 
-Bedrooms – Number of bedrooms
+## The model has a strong predictive capability.
 
-Bathrooms – Number of bathrooms
+## Conclusions
+The real estate market is dynamic and complex
 
-Sqft_living – Square footage of living space in the house
+There is a need for a robust model that predicts the prices of the houses
 
-Sqft_lot – Square footage of the lot
+We developed a regression model to explain the relationship between house prices and other variables
 
-Floors – Number of floors(levels) in the house
+The Real Estate Agency should consider investing in houses with a nice view, large basement, and waterfront
 
-Sqft_above – Square footage of the house apart from the basement.
-
-Sqft_basement – Square footage of the basement.
-
-Yr_built – Year when house was built.
-
-Yr_renovated – Year when house was renovated.
-
-Lat – Latitude coordinate.
-
-Long – Longitude coordinate.
-
-Sqft_living15 – The square footage of interior housing living space for the nearest 15 neighbors.
-
-Sqft_lot15 – The square footage of the land lots of the nearest 15 neighbors.
-
-2.1 Numerical columns 
-
-
-2.2 Categorical Variables
-
-We also identified the categorical variables and described them to better understand the dataset.
-
-Waterfront – Whether the house is on a waterfront
-View –Quality of view from house
-Condition –How good the overall condition of the house is. Related to maintenance of house.
-Grade – Overall grade of the house. Related to the construction and design of the house.
-Zipcode – ZIP Code used by the United States Postal Service.
-
-
-Chapter 3: Data Cleaning
-
-In this chapter, we will focus on preparing the dataset for analysis and modeling by performing the following key steps:
-
-3.1 Identifying and Handling Duplicates
-
-In this initial step, we will identify and remove any duplicate entries in the dataset. Duplicates can skew our analysis and modeling results, so it's essential to ensure data integrity.
-
-3.2 Handling Missing Values
-
-After exploring the dataset, we have discovered missing values in several columns, including 'Waterfront,' 'yr_renovated,' and 'views.' These missing values need to be addressed to maintain the dataset's integrity. Our approach will include:
-
-3.2.1 Waterfront Column
-
-For the 'Waterfront' column, we will handle missing values by replacing them with the mode (the most frequent value). This is a common approach for categorical data where the majority class provides the best approximation for the missing data.
-
-3.2.2 Year Renovated Column
-
-In the 'yr_renovated' column, we will perform feature engineering to classify houses as either renovated or not renovated. This transformation will help us retain the valuable information about renovations without relying on incomplete data.
-
-3.2.3 Views Column
-
-For the 'views' column, we will determine the best approach to handle the missing values, considering the nature of the data and its impact on our model.
-
-These feature engineering and selection steps are essential to ensure that our model is built on the most relevant and informative data, allowing it to make accurate predictions. By systematically addressing duplicates, missing values, and selecting the most relevant features,, our dataset will be primed for effective exploratory data analysis (EDA) and modeling in the subsequent chapters.
-
-
-Chapter 4: EDA & Feature Engineering 
-
-4.1 EDA
-
-4.1.1 Univariate
-
-4.1.2 Bivariate
-
-4.1.3 Multivariate
-
-
-4.2 Feature Engineering
-
-In this step, we will not only identify and remove irrelevant columns but also create new features that enhance the predictive power of our model. Our approach will include:
-
-3.3.1 Handling 'yr_renovated' and Creating a ‘renovated’ column
-
-For the 'yr_renovated' column, we will engineer a new feature (renovated) that classifies houses as either "renovated" or "not renovated." This transformation will allow us to capture the impact of renovations on house prices, even when the exact renovation year is missing.
-
-3.3.2 Calculating House Age and Dropping the 'date' Column
-
-To gain insights into the age of the houses, we will utilize the 'date' column, which contains information about when the house was built. We will calculate the age of each house by subtracting the construction year from the current date. After calculating the age, we will drop the 'date' column from the dataset to streamline it and remove redundant information.
-
-Chapter 4: Data Analysis and Modelling
-
-Chapter 5: Conclusion
-
-Chapter 6: Limitation Next Steps
-
-Appendix
+## Contributors
+Winnie Mauti https://github.com/nyaberimauti Robinson Mumo https://github.com/robymumo Mercy Tegekson https://github.com/mercytegekson Paul mbugua https://github.com/Paulwaweru Victor Gachie
+Ronny Muriithi https://github.com/naphtron
 
