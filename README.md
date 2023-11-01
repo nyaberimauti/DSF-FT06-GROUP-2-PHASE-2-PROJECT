@@ -1,3 +1,4 @@
+
 ## Housing prices Prediction In King County
 ## Problem Statement
 The Real estate agency face difficulties, when accessing the key factors tha influence the housing prices in King County.Then aim of this project is try to find the most important features that influence ,the housing prices . We also aim to provide the most to develop a more comprehensive understanding of our variables so us to predict accurately the housing prices in king count
@@ -70,6 +71,6 @@ We developed a regression model to explain the relationship between house prices
 The Real Estate Agency should consider investing in houses with a nice view, large basement, and waterfront
 
 ## Contributors
-Winnie Mauti https://github.com/nyaberimauti Robinson Mumo https://github.com/robymumo Mercy Tegekson https://github.com/mercytegekson Paul mbugua https://github.com/Paulwaweru Victor Gachie
+Winnie Mauti https://github.com/nyaberimauti Robinson Mumo https://github.com/robymumo Mercy Tegekson https://github.com/mercytegekson Paul mbugua https://github.com/Paulwaweru Victor Gachie https://github.com/amature98
 Ronny Muriithi https://github.com/naphtron
 
